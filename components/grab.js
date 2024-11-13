@@ -54,7 +54,7 @@ AFRAME.registerComponent('grab', {
   onGripOpen: function (evt) {
     this.grabbing = false;
     if (!this.hitEl) { return; }
-    hitEl.removeState(this.GRABBED_STATE);
+    this.hitEl.removeState(this.GRABBED_STATE);
 
     if (this.driver === "cannon") {
       this.system.removeConstraint(this.constraint);
