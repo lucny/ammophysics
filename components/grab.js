@@ -53,7 +53,7 @@ AFRAME.registerComponent('grab', {
 
   onGripOpen: function (evt) {
     this.grabbing = false;
-    if (!hitEl) { return; }
+    if (!this.hitEl) { return; }
     hitEl.removeState(this.GRABBED_STATE);
 
     if (this.driver === "cannon") {
@@ -64,7 +64,7 @@ AFRAME.registerComponent('grab', {
       // Ammo
       this.hitEl.removeAttribute(`ammo-constraint__${this.el.id}`)
     }
-    this.hitEl = undefined;
+    this.hitEl = null;
     
   },
 
